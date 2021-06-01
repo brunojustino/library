@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="flex-container">
+        <header>
+            <h1>Your Local Library</h1>
+        </header>
+
+        <div class="form-div">
+            <form>
+                <ul class="flex-outer">
+                  <li>
+                    <label for="book">Book</label>
+                    <input type="text" id="book" placeholder="Book Title">
+                    <label for="author">Author</label>
+                    <input type="text" id="author" placeholder="Name of the author">
+                  </li>
+                  <li>
+                    <label for="numPages">Pages</label>
+                    <input type="number" id="numPages" placeholder="Pages">
+                    <label for="rate">Rate</label>
+                    <input type="number" min="0" max="10" id="rate" placeholder="1-10">
+                    <label for="bookImg">Image</label>
+                    <input type="text" id="bookImg" placeholder="Paste the book image link">
+                  </li>
+                  <li>
+                    <label for="about">About</label>
+                    <textarea rows="4" id="about" placeholder="What this book is about"></textarea>
+                  </li>
+                  <li>
+                    <div class="box-submit">
+                        <label for="other">Read?</label>
+                        <input type="checkbox" id="other">
+
+                        <button type="submit">Add</button>
+                    </div>
+                  </li>
+                </ul>
+              </form>
+        </div>
+
+        <div class="books-div">
+            <h3>Books</h3>
+            <ul class="cards">
+                <li class="cards__item">
+                  <div class="card">
+                    <div class="card__image card__image--fence"></div>
+                    <div class="card__content">
+                      <div class="card__title">Flex</div>
+                      <p class="card__text">This is the shorthand for flex-grow, flex-shrink and flex-basis combined. The second and third parameters (flex-shrink and flex-basis) are optional. Default is 0 1 auto. </p>
+                      <button class="btn btn--block card__btn">Button</button>
+                    </div>
+                  </div>
+                </li>
+                <li class="cards__item">
+                  <div class="card">
+                    <div class="card__image card__image--river"></div>
+                    <div class="card__content">
+                      <div class="card__title">Flex Grow</div>
+                      <p class="card__text">This defines the ability for a flex item to grow if necessary. It accepts a unitless value that serves as a proportion. It dictates what amount of the available space inside the flex container the item should take up.</p>
+                      <button class="btn btn--block card__btn">Button</button>
+                    </div>
+                  </div>
+                </li>
+                <li class="cards__item">
+                  <div class="card">
+                    <div class="card__image card__image--record"></div>
+                    <div class="card__content">
+                      <div class="card__title">Flex Shrink</div>
+                      <p class="card__text">This defines the ability for a flex item to shrink if necessary. Negative numbers are invalid.</p>
+                      <button class="btn btn--block card__btn">Button</button>
+                    </div>
+                  </div>
+                </li>
+                <li class="cards__item">
+                  <div class="card">
+                    <div class="card__image card__image--flowers"></div>
+                    <div class="card__content">
+                      <div class="card__title">Flex Basis</div>
+                      <p class="card__text">This defines the default size of an element before the remaining space is distributed. It can be a length (e.g. 20%, 5rem, etc.) or a keyword. The auto keyword means "look at my width or height property."</p>
+                      <button class="btn btn--block card__btn">Button</button>
+                    </div>
+                  </div>
+                </li>
+              </ul>  
+
+        </div>
+
+        <footer>
+            <p>Website made by <i>Bruno Justino</i></p>
+        </footer>
+    </div>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

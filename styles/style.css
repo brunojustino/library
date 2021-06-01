@@ -1,0 +1,261 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font: normal 18px/1.5 "Fira Sans", "Helvetica Neue", sans-serif;
+    background: #3AAFAB;
+    color: #fff;
+    
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+    min-height: 100vh;
+    width: 100%;
+}
+
+header{
+    order: 0;
+    flex: 1 1 10vh;
+
+}
+
+/* begin of form div */
+
+.form-div{
+    order: 1;
+    flex: 1 1 10vh;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgba(5, 5, 5, 0.171);
+    padding: 1%;
+}
+
+.flex-outer,
+.flex-inner {
+  list-style-type: none;
+  padding: 0;
+}
+
+.flex-outer {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.flex-outer li,
+.flex-inner {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.flex-inner {
+  padding: 0 8px;
+  justify-content: space-between;  
+}
+
+.flex-outer > li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.flex-outer li label,
+.flex-outer li p {
+  padding: 5px;
+  font-weight: 300;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.flex-outer > li > label,
+.flex-outer li p {
+  flex: 0 0 10%;
+  max-width: 220px;
+}
+
+.flex-outer > li > label + *,
+.flex-inner {
+  flex: 1 0 150px;
+}
+
+.flex-outer li p {
+  margin: 0;
+}
+.flex-outer li input[type='number']{
+  max-width: 10%;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.flex-outer li input:not([type='checkbox']),
+.flex-outer li textarea {
+  padding: 15px;
+  border: none;
+}
+
+.flex-outer li button {
+  margin-left: auto;
+  padding: 8px 16px;
+  border: none;
+  background: #333;
+  color: #f2f2f2;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  border-radius: 2px;
+}
+
+.flex-inner li {
+    width: 100px;
+}
+
+.box-submit{
+    display: grid;
+    grid-template-columns: 1fr 20px 3fr;
+
+}
+
+/* end of form div */
+.books-div{
+    order: 2;
+    flex: 2 2 50vh;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 10%;
+    justify-content: center;
+}
+
+
+footer{
+    order: 3;
+    flex: 1 1 6vh;
+    width: 100%;
+    border-top: 1px solid rgba(5, 5, 5, 0.171);
+    align-self: center;
+    text-align: center;
+    padding: 10px;
+    background-color: #0f111166;
+    
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+  }
+  .btn {
+    background-color: white;
+    border: 1px solid #cccccc;
+    border-radius: 1rem;
+    color: #696969;
+    padding: 0.5rem;
+    text-transform: lowercase;
+  }
+  .btn--block {
+    display: block;
+    width: 100%;
+  }
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .cards__item {
+    display: flex;
+    padding: 1rem;
+  }
+  @media (min-width: 40rem) {
+    .cards__item {
+      width: 50%;
+    }
+  }
+  @media (min-width: 56rem) {
+    .cards__item {
+      width: 33.3333%;
+    }
+  }
+  .card {
+    background-color: white;
+    border-radius: 0.25rem;
+    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .card:hover .card__image {
+    filter: contrast(100%);
+  }
+  .card__content {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .card__image {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    filter: contrast(70%);
+    overflow: hidden;
+    position: relative;
+    transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+  }
+  .card__image::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%;
+  }
+  @media (min-width: 40rem) {
+    .card__image::before {
+      padding-top: 66.6%;
+    }
+  }
+  .card__image--flowers {
+    background-image: url(https://unsplash.it/800/600?image=82);
+  }
+  .card__image--river {
+    background-image: url(https://unsplash.it/800/600?image=11);
+  }
+  .card__image--record {
+    background-image: url(https://unsplash.it/800/600?image=39);
+  }
+  .card__image--fence {
+    background-image: url(https://unsplash.it/800/600?image=59);
+  }
+  .card__title {
+    color: #696969;
+    font-size: 1.25rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .card__text {
+    flex: 1 1 auto;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+  }
