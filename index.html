@@ -12,32 +12,31 @@
         </header>
 
         <div class="form-div">
-            <form>
+            <form id="bookForm" onsubmit="event.preventDefault(); formValidation();">
                 <ul class="flex-outer">
                   <li>
-                    <label for="book">Book</label>
-                    <input type="text" id="book" placeholder="Book Title">
-                    <label for="author">Author</label>
-                    <input type="text" id="author" placeholder="Name of the author">
+                    <label for="bookTitle">Book</label>
+                    <input type="text" id="bookTitle" placeholder="Book Title">
+                    <label for="bookAuthor">Author</label>
+                    <input type="text" id="bookAuthor" placeholder="Name of the author">
                   </li>
                   <li>
-                    <label for="numPages">Pages</label>
-                    <input type="number" id="numPages" placeholder="Pages">
-                    <label for="rate">Rate</label>
-                    <input type="number" min="0" max="10" id="rate" placeholder="1-10">
+                    <label for="bookPages">Pages</label>
+                    <input type="number" id="bookPages" placeholder="Pages">
+                    <label for="bookRate">Rate</label>
+                    <input type="number" min="0" max="10" id="bookRate" placeholder="1-10">
                     <label for="bookImg">Image</label>
                     <input type="text" id="bookImg" placeholder="Paste the book image link">
                   </li>
                   <li>
-                    <label for="about">About</label>
-                    <textarea rows="4" id="about" placeholder="What this book is about"></textarea>
+                    <label for="bookAbout">About</label>
+                    <textarea rows="4" id="bookAbout" placeholder="What this book is about"></textarea>
                   </li>
                   <li>
                     <div class="box-submit">
-                        <label for="other">Read?</label>
-                        <input type="checkbox" id="other">
-
-                        <button type="submit">Add</button>
+                        <label for="bookRead">Read?</label>
+                        <input type="checkbox" id="bookRead">
+                        <button id="submitBtn" type="submit">Add Book</button>
                     </div>
                   </li>
                 </ul>
