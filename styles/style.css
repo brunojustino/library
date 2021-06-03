@@ -262,9 +262,9 @@ img {
     background-image: url(https://unsplash.it/800/600?image=59);
   }
   .card__title {
-    color: #696969;
+    color: #f5f5f5;
     font-size: 1.25rem;
-    font-weight: 300;
+    font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
   }
