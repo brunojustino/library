@@ -25,8 +25,6 @@
                     <input type="number" id="bookPages" placeholder="Pages">
                     <label for="bookRate">Rate</label>
                     <input type="number" min="0" max="10" id="bookRate" placeholder="1-10">
-                    <label for="bookImg">Image</label>
-                    <input type="text" id="bookImg" placeholder="Paste the book image link">
                   </li>
                   <li>
                     <label for="bookAbout">About</label>
@@ -34,9 +32,7 @@
                   </li>
                   <li>
                     <div class="box-submit">
-                        <label for="bookRead">Read?</label>
-                        <input type="checkbox" id="bookRead">
-                        <button id="submitBtn" type="submit">Add Book</button>
+                      <button id="submitBtn" type="submit">Add Book</button>
                     </div>
                   </li>
                 </ul>
@@ -46,50 +42,30 @@
         <div class="books-div">
             <h3>Books</h3>
             <ul class="cards">
-                <li class="cards__item">
+                 <!-- <li class="cards__item">
                   <div class="card">
-                    <div class="card__image card__image--fence"></div>
                     <div class="card__content">
-                      <div class="card__title">Flex</div>
-                      <p class="card__text">This is the shorthand for flex-grow, flex-shrink and flex-basis combined. The second and third parameters (flex-shrink and flex-basis) are optional. Default is 0 1 auto. </p>
-                      <button class="btn btn--block card__btn">Button</button>
+                      <div class="card__title" id="titleDisplay">Flex</div>
+                      <p class="card__text" id="authorDisplay">Bruno Justino</p>
+                      <p class="card__text" id="pagesDisplay">1</p>
+                      <p class="card__text" id="rateDisplay">10</p>
+                      <p class="card__text" id="aboutDisplay">This is the shorthand for flex-grow, flex-shrink and flex-basis combined. The second and third parameters (flex-shrink and flex-basis) are optional. Default is 0 1 auto. </p>
+                      <div class="bottom">
+                        <div class="checkDiv">
+                          <p id="readDisplay">Completed?</p>
+                          <label class="switch">
+                          <input type="checkbox">
+                          <span class="slider round"></span>
+                          </label>
+                          <button class="btn btn--block card__btn">X</button>
+                    </div>
+                    </div>
                     </div>
                   </div>
-                </li>
-                <li class="cards__item">
-                  <div class="card">
-                    <div class="card__image card__image--river"></div>
-                    <div class="card__content">
-                      <div class="card__title">Flex Grow</div>
-                      <p class="card__text">This defines the ability for a flex item to grow if necessary. It accepts a unitless value that serves as a proportion. It dictates what amount of the available space inside the flex container the item should take up.</p>
-                      <button class="btn btn--block card__btn">Button</button>
-                    </div>
-                  </div>
-                </li>
-                <li class="cards__item">
-                  <div class="card">
-                    <div class="card__image card__image--record"></div>
-                    <div class="card__content">
-                      <div class="card__title">Flex Shrink</div>
-                      <p class="card__text">This defines the ability for a flex item to shrink if necessary. Negative numbers are invalid.</p>
-                      <button class="btn btn--block card__btn">Button</button>
-                    </div>
-                  </div>
-                </li>
-                <li class="cards__item">
-                  <div class="card">
-                    <div class="card__image card__image--flowers"></div>
-                    <div class="card__content">
-                      <div class="card__title">Flex Basis</div>
-                      <p class="card__text">This defines the default size of an element before the remaining space is distributed. It can be a length (e.g. 20%, 5rem, etc.) or a keyword. The auto keyword means "look at my width or height property."</p>
-                      <button class="btn btn--block card__btn">Button</button>
-                    </div>
-                  </div>
-                </li>
+                </li> -->
+
               </ul>  
-
-        </div>
-
+        </div> <!-- books div end-->
         <footer>
             <p>Website made by <i>Bruno Justino</i></p>
         </footer>

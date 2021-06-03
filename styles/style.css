@@ -80,8 +80,8 @@ header{
 
 .flex-outer > li > label,
 .flex-outer li p {
-  flex: 0 0 10%;
-  max-width: 220px;
+  /* flex: 1 1 20%; */
+  width: 100px;
 }
 
 .flex-outer > li > label + *,
@@ -130,9 +130,7 @@ input[type=number] {
 }
 
 .box-submit{
-    display: grid;
-    grid-template-columns: 1fr 20px 3fr;
-
+  margin: auto;
 }
 
 /* end of form div */
@@ -158,22 +156,25 @@ footer{
     
 }
 
+/* card css */
+
 img {
     height: auto;
     max-width: 100%;
     vertical-align: middle;
   }
   .btn {
-    background-color: white;
-    border: 1px solid #cccccc;
+    background-color: #c14747d1;
+    border: 1px solid #9b0f0f;
     border-radius: 1rem;
-    color: #696969;
+    color: #eae8e8;
     padding: 0.5rem;
-    text-transform: lowercase;
+    margin-left: 10px;
+    margin-top: 5px;
   }
   .btn--block {
-    display: block;
-    width: 100%;
+    display: inline;
+    width: 40px;
   }
   .cards {
     display: flex;
@@ -181,6 +182,8 @@ img {
     list-style: none;
     margin: 0;
     padding: 0;
+    width: 80vw;
+    justify-content: center;
   }
   .cards__item {
     display: flex;
@@ -197,13 +200,25 @@ img {
     }
   }
   .card {
-    background-color: white;
+    background-color: rgba(83, 83, 83, 0.205);
     border-radius: 0.25rem;
     box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
     display: flex;
+    flex: 1 1 auto;
     flex-direction: column;
     overflow: hidden;
   }
+
+  .card .bottom{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bottomButtons{
+    align-self: center;
+    display: flex;
+  }
+
   .card:hover .card__image {
     filter: contrast(100%);
   }
@@ -254,8 +269,75 @@ img {
     text-transform: uppercase;
   }
   .card__text {
-    flex: 1 1 auto;
+    flex: 1 2 auto;
     font-size: 0.875rem;
     line-height: 1.5;
     margin-bottom: 1.25rem;
   }
+
+  /* on off button */
+
+   /* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-right: 30%;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+} 
