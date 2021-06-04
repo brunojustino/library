@@ -6,21 +6,50 @@ let pages = document.getElementById("bookPages")
 let rate = document.getElementById("bookRate")
 let about = document.getElementById("bookAbout")
 let cards = document.querySelector(".cards")
+let inputs = document.querySelectorAll("input")
 const button = document.getElementById("submitBtn")
 let books = []
 let id = 0
 
-function formValidation(){
-    console.log("validating...")
+// Array.from(inputs).forEach( (i) => {
+//     i.addEventListener("input", (e) => console.log("e:" + e))
+// })
+
+populateBooks()
+
+function validateInput(field){
+    if (field.value.trim() === "") {
+        this.setStatus(field, `${field.previousElementSibling.innerText} cannot be blank`, "error")
+      } else {
+        this.setStatus(field, null, "success")
+      }
+}
+
+
+function formSend(){
     addBook()
     addCard(books[books.length-1])
     clearForm()
 }
 
+function populateBooks(){
+    for(let i=0; i < localStorage.length; i++){
+        if(!JSON.parse(localStorage.getItem(i)).deleted){
+            books.push(JSON.parse(localStorage.getItem(i)))
+            addCard(JSON.parse(localStorage.getItem(i)))
+        }    
+    }
+    id = localStorage.length == 0 ? 0 : localStorage.length-1
+}
+
 function addBook(){
-    books.push(new Book(id, title.value, author.value, pages.value, 
-        rate.value, about.value))
-    id++
+    let b = new Book(books.length, title.value, author.value, pages.value, 
+        rate.value, about.value)
+// let b = new Book(id, title.value, author.value, pages.value, 
+//     rate.value, about.value)
+    localStorage.setItem(id.toString(), JSON.stringify(b))
+    books.push(b)
+    id = books.length
 }
 
 function clearForm(){
@@ -89,10 +118,13 @@ function addCard(book){
 
     let inputCheckBox = document.createElement("input")
     inputCheckBox.setAttribute("type", "checkbox")
+    if(book.read) inputCheckBox.checked = true;
     lSwitch.appendChild(inputCheckBox)
     
     inputCheckBox.addEventListener("click", () => {
-        book.read = !book.read
+        console.log("clicked")
+        isRead(book.id)
+        console.log(book)
     })
 
     let sSlider = document.createElement("span")
@@ -111,14 +143,24 @@ function addCard(book){
 
 }
 
+function clearAll(){
+    localStorage.clear()
+    location.reload(); 
+}
+
 function deleteCard(id, card){
     document.querySelector(`[data-id="${id}"]`)
     cards.removeChild(card)
 }
 
 function deleteBook(id){
-    console.log("delete book id" + id)
     books[id].deleted = true
+    localStorage.setItem(id.toString(), JSON.stringify(books[id]))
+}
+
+function isRead(id){
+    books[id].read = !books[id].read
+    localStorage.setItem(id.toString(), JSON.stringify(books[id]))
 }
 
 function Book(id, title, author, pages, rate, about){

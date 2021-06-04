@@ -12,13 +12,13 @@
         </header>
 
         <div class="form-div">
-            <form id="bookForm" onsubmit="event.preventDefault(); formValidation();">
+            <form id="bookForm" onsubmit="event.preventDefault(); formSend();">
                 <ul class="flex-outer">
                   <li>
                     <label for="bookTitle">Book</label>
-                    <input type="text" id="bookTitle" placeholder="Book Title">
+                    <input required type="text" id="bookTitle" placeholder="Book Title">
                     <label for="bookAuthor">Author</label>
-                    <input type="text" id="bookAuthor" placeholder="Name of the author">
+                    <input required type="text" id="bookAuthor" placeholder="Name of the author">
                   </li>
                   <li>
                     <label for="bookPages">Pages</label>
@@ -64,7 +64,8 @@
                   </div>
                 </li> -->
 
-              </ul>  
+              </ul> 
+              <button onclick="clearAll()" class="btn btn--clear card__btn">Delete all books</button>
         </div> <!-- books div end-->
         <footer>
             <p>Website made by <i>Bruno Justino</i></p>
